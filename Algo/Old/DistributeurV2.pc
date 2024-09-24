@@ -1,0 +1,36 @@
+Algorithme Distributeur de boissons
+
+Variable stock1, stock2, stock3, choix : Entier
+
+DEBUT
+    stock1 <- 0
+    stock2 <- 2
+    stock3 <- 3
+    FAIRE
+        Ecrire("Choisissez une boisson. Boisson1: 1, Boisson2: 2, Boisson3: 3, FINIR : 4")
+        Lire(choix)
+        SI choix == 1 ALORS
+            SI stock1 > 0 ALORS
+                Ecrire("Voici votre boisson1 , santé!")
+                stock1 <- stock1 - 1
+            SINON
+                Ecrire("Plus de boisson1")
+            FINSI
+        SINONSI choix == 2 ALORS
+            SI stock2 > 0 ALORS
+                Ecrire("Voici votre boisson2 , santé!")
+                stock2 <- stock2 - 1
+            SINON
+                Ecrire("Plus de boisson2")
+            FINSI
+        SINONSI choix == 3 ALORS
+            SI stock3 > 0 ALORS
+                Ecrire("Voici votre boisson3 , santé!")
+                stock3 <- stock3 - 1
+            SINON
+                Ecrire("Plus de boisson3")
+            FINSI
+        FINSI        
+    TANTQUE ((stock1 + stock 2 + stock 3) > 0) ET (choix != 4) FINTQ
+    Ecrire("Merci d'utiliser distributeur 3000!")
+FIN
