@@ -7,17 +7,20 @@
             int stock1 = 5; //Valeur fictive pour test
             int stock2 = 2; //Valeur fictive pour test
             int stock3 = 0; //Valeur fictive pour test
-
-            Console.WriteLine("Veuillez sélectionner une boisson :");
-            Console.WriteLine("1. Eau");
-            Console.WriteLine("2. Soda");
-            Console.WriteLine("3. Orangeade");
-
-            string choix = Console.ReadLine();
-
-            switch (choix)
+            string choix;
+            do
             {
-                case "1":
+
+                Console.WriteLine("Veuillez sélectionner une boisson :");
+                Console.WriteLine("1. Eau");
+                Console.WriteLine("2. Soda");
+                Console.WriteLine("3. Orangeade");
+                Console.WriteLine("4. Finir");
+
+                choix = Console.ReadLine();
+
+                if (choix == "1")
+                {
                     if (stock1 != 0)
                     {
                         Console.WriteLine("Voici votre eau");
@@ -25,8 +28,10 @@
                     }
                     else
                         Console.WriteLine("Sold out!");
-                    break;
-                case "2":
+
+                }
+                else if (choix == "2")
+                {
                     if (stock2 != 0)
                     {
                         Console.WriteLine("Voici votre soda");
@@ -34,8 +39,9 @@
                     }
                     else
                         Console.WriteLine("Sold out!");
-                    break;
-                case "3":
+                }
+                else if (choix == "3")
+                {
                     if (stock3 != 0)
                     {
                         Console.WriteLine("Voici votre orangeade");
@@ -43,11 +49,9 @@
                     }
                     else
                         Console.WriteLine("Sold out!");
-                    break;
-                default:
-                    Console.WriteLine("Choix indisponible");
-                    break;
-            }
+                }
+            } while ((stock1 + stock2 + stock3 > 0) && choix != "4");
+            Console.WriteLine("Merci d'utiliser distributeur 3000!");
         }
     }
 }
